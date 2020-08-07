@@ -601,8 +601,8 @@ class MultiUserService {
     constructor(_http, userService) {
         this._http = _http;
         this.userService = userService;
-        this.socketUrl = 'http://localhost:4201/multiusers';
-        this.apiBaseUrl = 'http://localhost:4201/api/v1';
+        this.socketUrl = 'http://api.kanbanboard.co.in/multiusers';
+        this.apiBaseUrl = 'http://api.kanbanboard.co.in/api/v1';
         this.httpHeaderOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
                 authToken: this.userService.getAutheticatedUserInfo().authToken,
@@ -1963,8 +1963,8 @@ class TasklistService {
         this._http = _http;
         this.userService = userService;
         //initialize
-        this.baseurl = 'http://localhost:4201/api/v1';
-        this.socketUrl = 'http://localhost:4201/multiusers';
+        this.baseurl = 'http://api.kanbanboard.co.in/api/v1';
+        this.socketUrl = 'http://api.kanbanboard.co.in/multiusers';
         /**define listeners and emitters */
         /**1: Listen to authentication handshake */
         this.autheticateUser = () => {
@@ -3016,7 +3016,7 @@ class LoginComponent {
         /**Handle sucess */
         (response) => {
             console.debug('Login service res', response);
-            this.loginResponse = response.message;
+            this.loginResponse = `${response.message} --Redirecting To Your Tasks`;
             /**get user info from response and store as cookie for auth*/
             const { firstName, lastName, email, userId, authToken } = response.data;
             ng2_cookies__WEBPACK_IMPORTED_MODULE_1__["Cookie"].set('name', firstName + ' ' + lastName);
@@ -3692,7 +3692,7 @@ class UserService {
     constructor(_http) {
         this._http = _http;
         //initiliaze
-        this.baseurl = 'http://localhost:4201/api/v1';
+        this.baseurl = 'http://api.kanbanboard.co.in/api/v1';
     }
     //handle exceptions
     handleError(error) {

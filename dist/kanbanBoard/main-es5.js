@@ -1185,8 +1185,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this._http = _http;
         this.userService = userService;
-        this.socketUrl = 'http://localhost:4201/multiusers';
-        this.apiBaseUrl = 'http://localhost:4201/api/v1';
+        this.socketUrl = 'http://api.kanbanboard.co.in/multiusers';
+        this.apiBaseUrl = 'http://api.kanbanboard.co.in/api/v1';
         this.httpHeaderOptions = {
           headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
             authToken: this.userService.getAutheticatedUserInfo().authToken
@@ -3714,8 +3714,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this._http = _http;
         this.userService = userService; //initialize
 
-        this.baseurl = 'http://localhost:4201/api/v1';
-        this.socketUrl = 'http://localhost:4201/multiusers';
+        this.baseurl = 'http://api.kanbanboard.co.in/api/v1';
+        this.socketUrl = 'http://api.kanbanboard.co.in/multiusers';
         /**define listeners and emitters */
 
         /**1: Listen to authentication handshake */
@@ -5753,7 +5753,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           /**Handle sucess */
           function (response) {
             console.debug('Login service res', response);
-            _this33.loginResponse = response.message;
+            _this33.loginResponse = "".concat(response.message, " --Redirecting To Your Tasks");
             /**get user info from response and store as cookie for auth*/
 
             var _response$data = response.data,
@@ -7126,7 +7126,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this._http = _http; //initiliaze
 
-        this.baseurl = 'http://localhost:4201/api/v1';
+        this.baseurl = 'http://api.kanbanboard.co.in/api/v1';
       } //handle exceptions
 
 
